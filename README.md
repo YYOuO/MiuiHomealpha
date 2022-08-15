@@ -1,8 +1,24 @@
-# MiuiHome-
-修改桌面原作者：[TAT趙](https://space.bilibili.com/324056528/video)
+MiuiHomealpha
+===
+修改桌面作者：[TAT趙](https://space.bilibili.com/324056528/video)
 ---
-# 安裝方法
-1. 下載zip
-2. 到magisk安裝
+Introduction
 ---
-請詳閱
+This is a magisk module to install unoffical miuihome on your xiaomi device. 
+
+Requirement
+---
+- Magisk installed ([link](https://github.com/topjohnwu/Magisk))
+- LSposed installed([link](https://github.com/LSPosed/LSPosed))
+- miui 12+
+
+Install
+---
+1. Install Magisk(you can go to this [website](http://lollol.infinityfreeapp.com) you learn)
+2. Flash LSposed module
+3. Flash this module
+4. Reboot
+5. Have fun
+---
+Tested on renoir 8/15
+
