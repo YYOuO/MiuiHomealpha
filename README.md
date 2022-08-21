@@ -4,8 +4,8 @@ MiuiHomealpha
 ---
 Introduction
 ---
-This is a magisk module to install unoffical miuihome on your xiaomi device. 
-There are two version now.
+This is a magisk module to install unoffical miuihome on your xiaomi device.  
+There are two version now.  
 堆疊版 & 修改版
 
 Requirement

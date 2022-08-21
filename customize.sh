@@ -17,8 +17,10 @@ device="`getprop ro.product.device`"
 Android_version="`grep_prop ro.build.version.release`"
 
 # Miui版本
-MIUI_version="`grep_prop ro.miui.ui.version.name`"
+MIUI_version="`grep_prop ro.miui.ui.version.code`"
 
+#發行商
+brand="`getprop ro.product.odm.brand`"
 # 介绍
 ui_print "*******************************************"
 ui_print "   $name "
@@ -28,6 +30,7 @@ sleep 2
 ui_print "*******************************************"
 ui_print "   設備信息"
 ui_print "   機型: $device"
+ui_print "   品牌: $brand "
 ui_print "   Android 版本: $Android_version"
 ui_print "   MIUI版本: $MIUI_version"
 ui_print "*******************************************"

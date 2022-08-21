@@ -28,6 +28,30 @@ is_legacy_script() {
   return $?
 }
 
+# 模組名稱
+name="`grep_prop name $TMPDIR/module.prop`"
+
+# 模組id
+id="`grep_prop id $TMPDIR/module.prop`"
+
+# 模組作者
+author="`grep_prop author $TMPDIR/module.prop`"
+
+# 模組版本
+version="`grep_prop version $TMPDIR/module.prop`"
+
+# 裝置信息
+device="`getprop ro.product.device`"
+
+# Android版本
+Android_version="`grep_prop ro.build.version.release`"
+
+# Miui版本
+MIUI_version="`grep_prop ro.miui.ui.version.code`"
+
+#發行商
+brand="`getprop ro.product.odm.brand`"
+
 print_modname() {
   local len
   len=`echo -n $MODNAME | wc -c`
@@ -35,10 +59,19 @@ print_modname() {
   local pounds=`printf "%${len}s" | tr ' ' '*'`
   ui_print "$pounds"
   ui_print " $MODNAME "
+  ui_print " Author: $author"
+  ui_print " Version: $version"
+  sleep 2
   ui_print "$pounds"
+  ui_print "   設備信息"
+  ui_print "   機型: $device"
+  ui_print "   品牌: $brand "
+  ui_print "   Android 版本: $Android_version"
+  ui_print "   MIUI版本: $MIUI_version"
   ui_print "*******************"
   ui_print " Powered by Magisk "
   ui_print "*******************"
+  sleep 2
 }
 
 ##############
@@ -53,7 +86,7 @@ mount /data 2>/dev/null
 # Load utility functions
 [ -f /data/adb/magisk/util_functions.sh ] || require_new_magisk
 . /data/adb/magisk/util_functions.sh
-[ $MAGISK_VER_CODE -gt 18100 ] || require_new_magisk
+[ $MAGISK_VER_CODE -gt 25000 ] || require_new_magisk
 
 # Preperation for flashable zips
 setup_flashable
